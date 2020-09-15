@@ -26,11 +26,11 @@ factorioServer:
   # Allows or disallows console commands. Must be one of: `true`, `false`, or `admins-only`.
   allowCommands: true
   # Pause the server when nobody is connected?
-  noAutoPause: "false"
+  noAutoPause: true
   # You'll want to change this to NodePort if you are on AWS.
   serviceType: LoadBalancer
   loadLatestSave: false
-  saveName: "Coolio"
+  saveName: "serversave"
   generateNewSave: false
 
   autosave:
