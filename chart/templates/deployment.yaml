@@ -88,6 +88,8 @@ spec:
         volumeMounts:
         - name: saves
           mountPath: /opt/factorio/saves
+        - name: configs
+          mountPath: /opt/factorio/config
         - name: mods
           mountPath: /opt/factorio/mods
       volumes:
@@ -95,6 +97,13 @@ spec:
       {{- if .Values.persistence.savedGames.enabled }}
         persistentVolumeClaim:
           claimName: {{ template "factorio.fullname" . }}-savedgames
+      {{- else }}
+        emptyDir: {}
+      {{- end }}
+      - name: configs
+      {{- if .Values.persistence.configs.enabled }}
+        persistentVolumeClaim:
+          claimName: {{ template "factorio.fullname" . }}-configs
       {{- else }}
         emptyDir: {}
       {{- end }}
