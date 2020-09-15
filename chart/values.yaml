@@ -1,7 +1,7 @@
 # Factorio image version
 # ref: https://quay.io/repository/games_on_k8s/factorio?tab=tags
-image: factoriotools/factorio
-imageTag: 1.0.0
+image: x46085/factorio
+imageTag: latest
 
 # Configure resource requests and limits
 # ref: http://kubernetes.io/docs/user-guide/compute-resources/
@@ -61,10 +61,6 @@ persistence:
   ##
   # storageClass: "-"
   savedGames:
-    # Set this to false if you don't care to persist saved games between restarts.
-    enabled: true
-    size: 1Gi
-  configs:
     # Set this to false if you don't care to persist saved games between restarts.
     enabled: true
     size: 1Gi
